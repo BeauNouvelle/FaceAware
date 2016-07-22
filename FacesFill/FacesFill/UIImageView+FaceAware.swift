@@ -15,7 +15,6 @@ extension UIImageView {
         DispatchQueue.global(attributes: .qosDefault).async {
             
             if self.image == nil {
-                // No point detecting faces without an image.
                 return
             }
             
