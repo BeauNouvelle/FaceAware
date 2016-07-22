@@ -25,11 +25,7 @@ Both of which don't seem to be maintained anymore.
 * iOS 8.0+
 
 ##Installation##
-####Manual####
 Simply drag `UIImageView+FaceAware.swift` into your project.
-
-####Cocoapods####
-
 
 ##Useage##
 Call the `focusOnFaces()` function *after* setting your image.
