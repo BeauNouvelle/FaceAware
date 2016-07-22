@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D8A03471D422576004F98A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A03461D422576004F98A0 /* AppDelegate.swift */; };
-		7D8A03491D422576004F98A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A03481D422576004F98A0 /* ViewController.swift */; };
 		7D8A034C1D422576004F98A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D8A034A1D422576004F98A0 /* Main.storyboard */; };
 		7D8A034E1D422576004F98A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D8A034D1D422576004F98A0 /* Assets.xcassets */; };
 		7D8A03511D422576004F98A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D8A034F1D422576004F98A0 /* LaunchScreen.storyboard */; };
 		7D8A035C1D422576004F98A0 /* FacesFillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A035B1D422576004F98A0 /* FacesFillTests.swift */; };
+		7D8A036A1D42259A004F98A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A03671D42259A004F98A0 /* AppDelegate.swift */; };
+		7D8A036B1D42259A004F98A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A03681D42259A004F98A0 /* ViewController.swift */; };
+		7D8A036D1D4225B7004F98A0 /* UIImageView+FaceAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A036C1D4225B7004F98A0 /* UIImageView+FaceAware.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +27,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7D8A03431D422576004F98A0 /* FacesFill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacesFill.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D8A03461D422576004F98A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7D8A03481D422576004F98A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7D8A03431D422576004F98A0 /* AspectFillFaceAware.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AspectFillFaceAware.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D8A034B1D422576004F98A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D8A034D1D422576004F98A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D8A03501D422576004F98A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D8A03521D422576004F98A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7D8A03571D422576004F98A0 /* FacesFillTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FacesFillTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D8A03571D422576004F98A0 /* AspectFillFaceAwareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AspectFillFaceAwareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D8A035B1D422576004F98A0 /* FacesFillTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacesFillTests.swift; sourceTree = "<group>"; };
 		7D8A035D1D422576004F98A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D8A03671D42259A004F98A0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7D8A03681D42259A004F98A0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7D8A036C1D4225B7004F98A0 /* UIImageView+FaceAware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FaceAware.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +61,7 @@
 		7D8A033A1D422576004F98A0 = {
 			isa = PBXGroup;
 			children = (
-				7D8A03451D422576004F98A0 /* FacesFill */,
+				7D8A03451D422576004F98A0 /* AspectFillFaceAware */,
 				7D8A035A1D422576004F98A0 /* FacesFillTests */,
 				7D8A03441D422576004F98A0 /* Products */,
 			);
@@ -68,22 +70,23 @@
 		7D8A03441D422576004F98A0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7D8A03431D422576004F98A0 /* FacesFill.app */,
-				7D8A03571D422576004F98A0 /* FacesFillTests.xctest */,
+				7D8A03431D422576004F98A0 /* AspectFillFaceAware.app */,
+				7D8A03571D422576004F98A0 /* AspectFillFaceAwareTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7D8A03451D422576004F98A0 /* FacesFill */ = {
+		7D8A03451D422576004F98A0 /* AspectFillFaceAware */ = {
 			isa = PBXGroup;
 			children = (
-				7D8A03461D422576004F98A0 /* AppDelegate.swift */,
-				7D8A03481D422576004F98A0 /* ViewController.swift */,
+				7D8A03661D42259A004F98A0 /* Demo */,
+				7D8A03691D42259A004F98A0 /* AspectFillFaceAware */,
 				7D8A034A1D422576004F98A0 /* Main.storyboard */,
 				7D8A034D1D422576004F98A0 /* Assets.xcassets */,
 				7D8A034F1D422576004F98A0 /* LaunchScreen.storyboard */,
 				7D8A03521D422576004F98A0 /* Info.plist */,
 			);
+			name = AspectFillFaceAware;
 			path = FacesFill;
 			sourceTree = "<group>";
 		};
@@ -96,12 +99,30 @@
 			path = FacesFillTests;
 			sourceTree = "<group>";
 		};
+		7D8A03661D42259A004F98A0 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				7D8A03671D42259A004F98A0 /* AppDelegate.swift */,
+				7D8A03681D42259A004F98A0 /* ViewController.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		7D8A03691D42259A004F98A0 /* AspectFillFaceAware */ = {
+			isa = PBXGroup;
+			children = (
+				7D8A036C1D4225B7004F98A0 /* UIImageView+FaceAware.swift */,
+			);
+			name = AspectFillFaceAware;
+			path = FacesFill;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7D8A03421D422576004F98A0 /* FacesFill */ = {
+		7D8A03421D422576004F98A0 /* AspectFillFaceAware */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7D8A03601D422576004F98A0 /* Build configuration list for PBXNativeTarget "FacesFill" */;
+			buildConfigurationList = 7D8A03601D422576004F98A0 /* Build configuration list for PBXNativeTarget "AspectFillFaceAware" */;
 			buildPhases = (
 				7D8A033F1D422576004F98A0 /* Sources */,
 				7D8A03401D422576004F98A0 /* Frameworks */,
@@ -111,14 +132,14 @@
 			);
 			dependencies = (
 			);
-			name = FacesFill;
+			name = AspectFillFaceAware;
 			productName = FacesFill;
-			productReference = 7D8A03431D422576004F98A0 /* FacesFill.app */;
+			productReference = 7D8A03431D422576004F98A0 /* AspectFillFaceAware.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7D8A03561D422576004F98A0 /* FacesFillTests */ = {
+		7D8A03561D422576004F98A0 /* AspectFillFaceAwareTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7D8A03631D422576004F98A0 /* Build configuration list for PBXNativeTarget "FacesFillTests" */;
+			buildConfigurationList = 7D8A03631D422576004F98A0 /* Build configuration list for PBXNativeTarget "AspectFillFaceAwareTests" */;
 			buildPhases = (
 				7D8A03531D422576004F98A0 /* Sources */,
 				7D8A03541D422576004F98A0 /* Frameworks */,
@@ -129,9 +150,9 @@
 			dependencies = (
 				7D8A03591D422576004F98A0 /* PBXTargetDependency */,
 			);
-			name = FacesFillTests;
+			name = AspectFillFaceAwareTests;
 			productName = FacesFillTests;
-			productReference = 7D8A03571D422576004F98A0 /* FacesFillTests.xctest */;
+			productReference = 7D8A03571D422576004F98A0 /* AspectFillFaceAwareTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -146,8 +167,6 @@
 				TargetAttributes = {
 					7D8A03421D422576004F98A0 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = RCFBK97QU7;
-						DevelopmentTeamName = "Pear Pi PTY LTD";
 						ProvisioningStyle = Automatic;
 					};
 					7D8A03561D422576004F98A0 = {
@@ -159,7 +178,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7D8A033E1D422576004F98A0 /* Build configuration list for PBXProject "FacesFill" */;
+			buildConfigurationList = 7D8A033E1D422576004F98A0 /* Build configuration list for PBXProject "AspectFillFaceAware" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -172,8 +191,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7D8A03421D422576004F98A0 /* FacesFill */,
-				7D8A03561D422576004F98A0 /* FacesFillTests */,
+				7D8A03421D422576004F98A0 /* AspectFillFaceAware */,
+				7D8A03561D422576004F98A0 /* AspectFillFaceAwareTests */,
 			);
 		};
 /* End PBXProject section */
@@ -203,8 +222,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D8A03491D422576004F98A0 /* ViewController.swift in Sources */,
-				7D8A03471D422576004F98A0 /* AppDelegate.swift in Sources */,
+				7D8A036A1D42259A004F98A0 /* AppDelegate.swift in Sources */,
+				7D8A036D1D4225B7004F98A0 /* UIImageView+FaceAware.swift in Sources */,
+				7D8A036B1D42259A004F98A0 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +241,7 @@
 /* Begin PBXTargetDependency section */
 		7D8A03591D422576004F98A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7D8A03421D422576004F98A0 /* FacesFill */;
+			target = 7D8A03421D422576004F98A0 /* AspectFillFaceAware */;
 			targetProxy = 7D8A03581D422576004F98A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -341,7 +361,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FacesFill/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pearpi.FacesFill;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pearpi.AspectFillFaceAware;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -353,7 +373,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FacesFill/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pearpi.FacesFill;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pearpi.AspectFillFaceAware;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -368,7 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pearpi.FacesFillTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FacesFill.app/FacesFill";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AspectFillFaceAware.app/AspectFillFaceAware";
 			};
 			name = Debug;
 		};
@@ -381,14 +401,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pearpi.FacesFillTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FacesFill.app/FacesFill";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AspectFillFaceAware.app/AspectFillFaceAware";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7D8A033E1D422576004F98A0 /* Build configuration list for PBXProject "FacesFill" */ = {
+		7D8A033E1D422576004F98A0 /* Build configuration list for PBXProject "AspectFillFaceAware" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7D8A035E1D422576004F98A0 /* Debug */,
@@ -397,7 +417,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7D8A03601D422576004F98A0 /* Build configuration list for PBXNativeTarget "FacesFill" */ = {
+		7D8A03601D422576004F98A0 /* Build configuration list for PBXNativeTarget "AspectFillFaceAware" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7D8A03611D422576004F98A0 /* Debug */,
@@ -405,7 +425,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		7D8A03631D422576004F98A0 /* Build configuration list for PBXNativeTarget "FacesFillTests" */ = {
+		7D8A03631D422576004F98A0 /* Build configuration list for PBXNativeTarget "AspectFillFaceAwareTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7D8A03641D422576004F98A0 /* Debug */,

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D8A03421D422576004F98A0"
-               BuildableName = "FacesFill.app"
-               BlueprintName = "FacesFill"
-               ReferencedContainer = "container:FacesFill.xcodeproj">
+               BuildableName = "AspectFillFaceAware.app"
+               BlueprintName = "AspectFillFaceAware"
+               ReferencedContainer = "container:AspectFillFaceAware.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D8A03561D422576004F98A0"
-               BuildableName = "FacesFillTests.xctest"
-               BlueprintName = "FacesFillTests"
-               ReferencedContainer = "container:FacesFill.xcodeproj">
+               BuildableName = "AspectFillFaceAwareTests.xctest"
+               BlueprintName = "AspectFillFaceAwareTests"
+               ReferencedContainer = "container:AspectFillFaceAware.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7D8A03421D422576004F98A0"
-            BuildableName = "FacesFill.app"
-            BlueprintName = "FacesFill"
-            ReferencedContainer = "container:FacesFill.xcodeproj">
+            BuildableName = "AspectFillFaceAware.app"
+            BlueprintName = "AspectFillFaceAware"
+            ReferencedContainer = "container:AspectFillFaceAware.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7D8A03421D422576004F98A0"
-            BuildableName = "FacesFill.app"
-            BlueprintName = "FacesFill"
-            ReferencedContainer = "container:FacesFill.xcodeproj">
+            BuildableName = "AspectFillFaceAware.app"
+            BlueprintName = "AspectFillFaceAware"
+            ReferencedContainer = "container:AspectFillFaceAware.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7D8A03421D422576004F98A0"
-            BuildableName = "FacesFill.app"
-            BlueprintName = "FacesFill"
-            ReferencedContainer = "container:FacesFill.xcodeproj">
+            BuildableName = "AspectFillFaceAware.app"
+            BlueprintName = "AspectFillFaceAware"
+            ReferencedContainer = "container:AspectFillFaceAware.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

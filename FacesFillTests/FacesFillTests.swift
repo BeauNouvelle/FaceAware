@@ -2,7 +2,7 @@
 //  FacesFillTests.swift
 //  FacesFillTests
 //
-//  Created by Beau Young on 22/7/16.
+//  Created by Beau Nouvelle on 22/7/16.
 //  Copyright © 2016 Pear Pi. All rights reserved.
 //
 
