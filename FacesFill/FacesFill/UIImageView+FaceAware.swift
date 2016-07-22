@@ -11,7 +11,7 @@ import Foundation
 
 extension UIImageView {
     
-    func focusOnFaces() {
+    public func focusOnFaces() {
         DispatchQueue.global(attributes: .qosDefault).async {
             
             if self.image == nil {
@@ -40,7 +40,7 @@ extension UIImageView {
         
     }
     
-    func applyFaceDetection(for features: [AnyObject], size: CGSize) {
+    private func applyFaceDetection(for features: [AnyObject], size: CGSize) {
         
         var rect = CGRect.zero
         var rightBorder = 0.0
@@ -100,7 +100,7 @@ extension UIImageView {
         }
     }
     
-    func imageLayer() -> CALayer {
+    private func imageLayer() -> CALayer {
         if let sublayers = layer.sublayers {
             for layer in sublayers {
                 if layer.name == "AspectFillFaceAware" {
