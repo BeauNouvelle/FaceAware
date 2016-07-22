@@ -1,6 +1,6 @@
 # Aspect Fill - Face Aware
 
-Sometimes the aspect ratios of images we need to work with don't quite fit within the confines of our UIImageViews. They may be pulled from the web or user generated.
+Sometimes the aspect ratios of images we need to work with don't quite fit within the confines of our UIImageViews.
 
 In most cases we can use AspectFill to fit the image to the bounds of a UIImageView without stretching or leaving whitespace, however when it comes to photos of people, it's quite often to have the faces cropped out if they're not perfectly centered.
 
