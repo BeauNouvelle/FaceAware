@@ -1,43 +1,40 @@
 //
-//  UIImageView+FacesFill.swift
-//  FacesFill
+//  UIImageView+FaceAware.swift
+//  AspectFillFaceAware
 //
-//  Created by Beau Nouvelle on 22/7/16.
+//  Created by Beau Young on 29/7/16.
 //  Copyright © 2016 Pear Pi. All rights reserved.
 //
 
-import UIKit
 import Foundation
+import UIKit
 
 extension UIImageView {
     
     public func focusOnFaces() {
-        DispatchQueue.global(attributes: .qosDefault).async {
-            
+        
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0)) {
             if self.image == nil {
                 return
             }
             
-            var cImage = self.image!.ciImage
+            var cImage = self.image!.CIImage
             if cImage == nil {
-                cImage = CIImage(cgImage: self.image!.cgImage!)
+                cImage = CIImage(CGImage: self.image!.CGImage!)
             }
             
             let detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyLow])
-            let features = detector!.features(in: cImage!)
+            let features = detector.featuresInImage(cImage!)
             
             if features.count > 0 {
-                print("found \(features.count) faces")
-                let imgSize = CGSize(width: Double(self.image!.cgImage!.width), height: (Double(self.image!.cgImage!.height)))
+                let imgSize = CGSize(width: Double(self.image!.size.width), height: (Double(self.image!.size.height)))
                 self.applyFaceDetection(for: features, size: imgSize)
             } else {
-                print("No faces found")
-                DispatchQueue.main.async {
+                dispatch_async(dispatch_get_main_queue(), {
                     self.imageLayer().removeFromSuperlayer()
-                }
+                })
             }
         }
-        
     }
     
     private func applyFaceDetection(for features: [AnyObject], size: CGSize) {
@@ -76,7 +73,7 @@ extension UIImageView {
                 offset.x = finalSize.width - self.bounds.size.width
             }
             offset.x = -offset.x
-
+            
         } else {
             finalSize.width = self.bounds.size.width
             finalSize.height = size.height / size.width * finalSize.width
@@ -93,11 +90,12 @@ extension UIImageView {
             offset.y = -offset.y
         }
         
-        DispatchQueue.main.sync {
+        dispatch_async(dispatch_get_main_queue()) { 
             let layer = self.imageLayer()
             layer.frame = CGRect(x: offset.x, y: offset.y, width: finalSize.width, height: finalSize.height)
-            layer.contents = self.image!.cgImage
+            layer.contents = self.image!.CGImage
         }
+        
     }
     
     private func imageLayer() -> CALayer {

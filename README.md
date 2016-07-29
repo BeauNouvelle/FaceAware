@@ -20,16 +20,16 @@ Based on these two older projects:
 
 Both of which don't seem to be maintained anymore.
 
+
 ##Requirements##
 * Swift 3.0
 * iOS 8.0+
 
 ##Installation##
 ####Manual####
-Simply drag `UIImageView+FaceAware.swift` into your project.
+Simply drag `UIImageView+FaceAware.swift` into your project. 
 
-####Cocoapods####
-
+There's one for Swift 3.0 and 2.3 however the example project will only run on Xcode 8.
 
 ##Useage##
 Call the `focusOnFaces()` function *after* setting your image.
@@ -40,7 +40,7 @@ someImageView.focusOnFaces()
 
 ##Future Plans##
 * Add an option to only focus on largest/closest face in photo.
-
+* <s> Support Swift 2.3</s>   DONE
 
 
 

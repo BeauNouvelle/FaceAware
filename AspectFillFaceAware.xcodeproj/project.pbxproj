@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D6B69421D4B9ABD008BD92A /* UIImageView+FaceAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E08721D4B975C00C121EF /* UIImageView+FaceAware.swift */; };
 		7D8A034C1D422576004F98A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D8A034A1D422576004F98A0 /* Main.storyboard */; };
 		7D8A034E1D422576004F98A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D8A034D1D422576004F98A0 /* Assets.xcassets */; };
 		7D8A03511D422576004F98A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D8A034F1D422576004F98A0 /* LaunchScreen.storyboard */; };
 		7D8A035C1D422576004F98A0 /* FacesFillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A035B1D422576004F98A0 /* FacesFillTests.swift */; };
 		7D8A036A1D42259A004F98A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A03671D42259A004F98A0 /* AppDelegate.swift */; };
 		7D8A036B1D42259A004F98A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A03681D42259A004F98A0 /* ViewController.swift */; };
-		7D8A036D1D4225B7004F98A0 /* UIImageView+FaceAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A036C1D4225B7004F98A0 /* UIImageView+FaceAware.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,8 @@
 		7D8A035D1D422576004F98A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D8A03671D42259A004F98A0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D8A03681D42259A004F98A0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7D8A036C1D4225B7004F98A0 /* UIImageView+FaceAware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FaceAware.swift"; sourceTree = "<group>"; };
+		7D9E08721D4B975C00C121EF /* UIImageView+FaceAware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FaceAware.swift"; sourceTree = "<group>"; };
+		7D9E08741D4B977500C121EF /* UIImageView+FaceAware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FaceAware.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +112,27 @@
 		7D8A03691D42259A004F98A0 /* AspectFillFaceAware */ = {
 			isa = PBXGroup;
 			children = (
-				7D8A036C1D4225B7004F98A0 /* UIImageView+FaceAware.swift */,
+				7D9E08701D4B975C00C121EF /* Swift 2.3 */,
+				7D9E08711D4B975C00C121EF /* Swift 3 */,
 			);
 			name = AspectFillFaceAware;
 			path = FacesFill;
+			sourceTree = "<group>";
+		};
+		7D9E08701D4B975C00C121EF /* Swift 2.3 */ = {
+			isa = PBXGroup;
+			children = (
+				7D9E08741D4B977500C121EF /* UIImageView+FaceAware.swift */,
+			);
+			path = "Swift 2.3";
+			sourceTree = "<group>";
+		};
+		7D9E08711D4B975C00C121EF /* Swift 3 */ = {
+			isa = PBXGroup;
+			children = (
+				7D9E08721D4B975C00C121EF /* UIImageView+FaceAware.swift */,
+			);
+			path = "Swift 3";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,8 +241,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D8A036A1D42259A004F98A0 /* AppDelegate.swift in Sources */,
-				7D8A036D1D4225B7004F98A0 /* UIImageView+FaceAware.swift in Sources */,
 				7D8A036B1D42259A004F98A0 /* ViewController.swift in Sources */,
+				7D6B69421D4B9ABD008BD92A /* UIImageView+FaceAware.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +378,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FacesFill/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pearpi.AspectFillFaceAware;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -373,7 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FacesFill/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pearpi.AspectFillFaceAware;
 				PRODUCT_NAME = "$(TARGET_NAME)";
