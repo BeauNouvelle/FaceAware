@@ -1,6 +1,6 @@
 # Aspect Fill - Face Aware
 
-Sometimes the aspect ratios of images we need to work with don't quite fit within the confines of our UIImageViews. They may be pulled from the web or user generated.
+Sometimes the aspect ratios of images we need to work with don't quite fit within the confines of our UIImageViews.
 
 In most cases we can use AspectFill to fit the image to the bounds of a UIImageView without stretching or leaving whitespace, however when it comes to photos of people, it's quite often to have the faces cropped out if they're not perfectly centered.
 
@@ -20,13 +20,11 @@ Based on these two older projects:
 
 Both of which don't seem to be maintained anymore.
 
-
 ##Requirements##
 * Swift 3.0
 * iOS 8.0+
 
 ##Installation##
-####Manual####
 Simply drag `UIImageView+FaceAware.swift` into your project. 
 
 There's one for Swift 3.0 and 2.3 however the example project will only run on Xcode 8.
@@ -42,7 +40,26 @@ someImageView.focusOnFaces()
 * Add an option to only focus on largest/closest face in photo.
 * <s> Support Swift 2.3</s>   DONE
 
+##License##
 
+The MIT License (MIT)
 
+Copyright (c) 2016 Beau Nouvelle
 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
