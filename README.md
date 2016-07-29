@@ -27,7 +27,7 @@ Both of which don't seem to be maintained anymore.
 ##Installation##
 Simply drag `UIImageView+FaceAware.swift` into your project. 
 
-There's one for Swift 3.0 and 2.3 however the example project will only run on Xcode 8.
+There's one for Swift 3.0 and 2.3 however the example project will only run in Xcode 8.
 
 ##Useage##
 Call the `focusOnFaces()` function *after* setting your image.
