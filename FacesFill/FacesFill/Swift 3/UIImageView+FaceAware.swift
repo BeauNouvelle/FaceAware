@@ -12,34 +12,36 @@ import Foundation
 extension UIImageView {
     
     public func focusOnFaces() {
+        setImageAndFocusOnFaces(image: self.image)
+    }
+    
+    public func setImageAndFocusOnFaces(image: UIImage?) {
         DispatchQueue.global(attributes: .qosDefault).async {
-            
-            if self.image == nil {
+            if image == nil {
                 return
             }
             
-            var cImage = self.image!.ciImage
+            var cImage = image!.ciImage
             if cImage == nil {
-                cImage = CIImage(cgImage: self.image!.cgImage!)
+                cImage = CIImage(cgImage: image!.cgImage!)
             }
-            
             let detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyLow])
             let features = detector!.features(in: cImage!)
             
             if features.count > 0 {
-                let imgSize = CGSize(width: Double(self.image!.cgImage!.width), height: (Double(self.image!.cgImage!.height)))
-                self.applyFaceDetection(for: features, size: imgSize)
+                print("found \(features.count) faces")
+                let imgSize = CGSize(width: Double(image!.cgImage!.width), height: (Double(image!.cgImage!.height)))
+                self.applyFaceDetection(for: features, size: imgSize, cgImage: image!.cgImage!)
             } else {
+                print("No faces found")
                 DispatchQueue.main.async {
                     self.imageLayer().removeFromSuperlayer()
                 }
             }
         }
-        
     }
     
-    private func applyFaceDetection(for features: [AnyObject], size: CGSize) {
-        
+    private func applyFaceDetection(for features: [AnyObject], size: CGSize, cgImage: CGImage) {
         var rect = CGRect.zero
         var rightBorder = 0.0
         var bottomBorder = 0.0
@@ -74,7 +76,6 @@ extension UIImageView {
                 offset.x = finalSize.width - self.bounds.size.width
             }
             offset.x = -offset.x
-
         } else {
             finalSize.width = self.bounds.size.width
             finalSize.height = size.height / size.width * finalSize.width
@@ -94,7 +95,7 @@ extension UIImageView {
         DispatchQueue.main.sync {
             let layer = self.imageLayer()
             layer.frame = CGRect(x: offset.x, y: offset.y, width: finalSize.width, height: finalSize.height)
-            layer.contents = self.image!.cgImage
+            layer.contents = cgImage
         }
     }
     
