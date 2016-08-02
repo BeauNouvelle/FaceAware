@@ -16,7 +16,7 @@ extension UIImageView {
     }
     
     public func setImageAndFocusOnFaces(image: UIImage?) {
-        DispatchQueue.global(attributes: .qosDefault).async {
+        DispatchQueue.global(qos: .default).async {
             if image == nil {
                 return
             }
