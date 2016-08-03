@@ -17,21 +17,19 @@ extension UIImageView {
     
     public func setImageAndFocusOnFaces(image: UIImage?) {
         DispatchQueue.global(attributes: .qosDefault).async {
-            if image == nil {
+            guard let image = image else {
                 return
             }
             
-            var cImage = image!.ciImage
-            if cImage == nil {
-                cImage = CIImage(cgImage: image!.cgImage!)
-            }
+            let cImage = image.ciImage ?? CIImage(cgImage: image.cgImage!)
+
             let detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyLow])
-            let features = detector!.features(in: cImage!)
+            let features = detector!.features(in: cImage)
             
             if features.count > 0 {
                 print("found \(features.count) faces")
-                let imgSize = CGSize(width: Double(image!.cgImage!.width), height: (Double(image!.cgImage!.height)))
-                self.applyFaceDetection(for: features, size: imgSize, cgImage: image!.cgImage!)
+                let imgSize = CGSize(width: Double(image.cgImage!.width), height: (Double(image.cgImage!.height)))
+                self.applyFaceDetection(for: features, size: imgSize, cgImage: image.cgImage!)
             } else {
                 print("No faces found")
                 DispatchQueue.main.async {
