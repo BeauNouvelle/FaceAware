@@ -17,12 +17,12 @@ extension UIImageView {
     
     public func setImageAndFocusOnFaces(image: UIImage?) {
         DispatchQueue.global(qos: .default).async {
-            if image == nil {
+            guard let image = image else {
                 return
             }
             
             let cImage = image.ciImage ?? CIImage(cgImage: image.cgImage!)
-
+            
             let detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyLow])
             let features = detector!.features(in: cImage)
             
