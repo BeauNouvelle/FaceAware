@@ -23,6 +23,8 @@ Both of which don't seem to be maintained anymore.
 ##Requirements##
 * Swift 3.0
 * iOS 8.0+
+* Xcode 8 beta 4
+There is also a Swift 2.3 version bundled in, but the project won't run in Xcode 7.
 
 ##Installation##
 Simply drag `UIImageView+FaceAware.swift` into your project. 
@@ -34,6 +36,12 @@ Call the `focusOnFaces()` function *after* setting your image.
 
 ```
 someImageView.focusOnFaces()
+```
+
+In order to reduce the sudden awkward recentering of the photo, there's a new function that will set the image, and focus on faces. 
+
+```
+setImageAndFocusOnFaces(image: myImage)
 ```
 
 ##Future Plans##
