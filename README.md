@@ -57,6 +57,9 @@ someImageView.set(image: myImage, focusOnFaces: true)
 ```
 Which elimates the worry of not having an image previously set.
 
+##More help? Questions?##
+Reach out to me on Twitter [@beaunouvelle](https://twitter.com/BeauNouvelle)
+
 ##Future Plans##
 * Add an option to only focus on largest/closest face in photo.
 * <s> Support Swift 2.3</s>
