@@ -46,7 +46,7 @@ You can set `focusOnFaces` to `true`.
 ```
 someImageView.focusOnFaces = true
 ```
-Be sure to set this *after* setting your image. If no image is present when this is called, there's no faces to focus on.
+Be sure to set this *after* setting your image. If no image is present when this is called, there will be no faces to focus on.
 
 ------
 
