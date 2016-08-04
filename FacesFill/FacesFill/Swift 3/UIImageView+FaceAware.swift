@@ -30,7 +30,7 @@ extension UIImageView {
         }
         setImageAndFocusOnFaces(image: image)
     }
-
+    
     private func setImageAndFocusOnFaces(image: UIImage?) {
         DispatchQueue.global(qos: .default).async {
             guard let image = image else {
@@ -52,7 +52,9 @@ extension UIImageView {
                     self.imageLayer().removeFromSuperlayer()
                 }
             }
-            self.image = image
+            DispatchQueue.main.sync {
+                self.image = image
+            }
         }
     }
     
