@@ -9,13 +9,29 @@
 import UIKit
 import Foundation
 
+@IBDesignable
 extension UIImageView {
     
-    public func focusOnFaces() {
-        setImageAndFocusOnFaces(image: self.image)
+    @IBInspectable
+    public var focusOnFaces: Bool {
+        set {
+            let image = self.image
+            self.image = nil
+            set(image: image, focusOnFaces: newValue)
+        } get {
+            return sublayer() != nil ? true : false
+        }
     }
     
-    public func setImageAndFocusOnFaces(image: UIImage?) {
+    public func set(image: UIImage?, focusOnFaces: Bool) {
+        guard focusOnFaces == true else {
+            self.image = image
+            return
+        }
+        setImageAndFocusOnFaces(image: image)
+    }
+
+    private func setImageAndFocusOnFaces(image: UIImage?) {
         DispatchQueue.global(qos: .default).async {
             guard let image = image else {
                 return
@@ -36,6 +52,7 @@ extension UIImageView {
                     self.imageLayer().removeFromSuperlayer()
                 }
             }
+            self.image = image
         }
     }
     
@@ -98,6 +115,18 @@ extension UIImageView {
     }
     
     private func imageLayer() -> CALayer {
+        if let layer = sublayer() {
+            return layer
+        }
+        
+        let subLayer = CALayer()
+        subLayer.name = "AspectFillFaceAware"
+        subLayer.actions = ["contents":NSNull(), "bounds":NSNull(), "position":NSNull()]
+        layer.addSublayer(subLayer)
+        return subLayer
+    }
+    
+    private func sublayer() -> CALayer? {
         if let sublayers = layer.sublayers {
             for layer in sublayers {
                 if layer.name == "AspectFillFaceAware" {
@@ -105,11 +134,7 @@ extension UIImageView {
                 }
             }
         }
-        let subLayer = CALayer()
-        subLayer.name = "AspectFillFaceAware"
-        subLayer.actions = ["contents":NSNull(), "bounds":NSNull(), "position":NSNull()]
-        layer.addSublayer(subLayer)
-        return subLayer
+        return nil
     }
     
 }

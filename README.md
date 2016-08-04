@@ -5,7 +5,7 @@ Sometimes the aspect ratios of images we need to work with don't quite fit withi
 In most cases we can use AspectFill to fit the image to the bounds of a UIImageView without stretching or leaving whitespace, however when it comes to photos of people, it's quite often to have the faces cropped out if they're not perfectly centered.
 
 This is where AspectFillFaceAware comes in.
-It will analyse a UIImageViews image property, and re-center the image to include all detected faces.
+It will analyse an image either through `UIImageView`'s `image` property, or one you set using one of the built in fucntions and focus in on any faces it can find within.
 
 <img src="https://raw.githubusercontent.com/BeauNouvelle/AspectFillFaceAware/master/largeExample.png" width=30%>
 
@@ -32,21 +32,35 @@ Simply drag `UIImageView+FaceAware.swift` into your project.
 There's one for Swift 3.0 and 2.3 however the example project will only run in Xcode 8.
 
 ##Useage##
-Call the `focusOnFaces()` function *after* setting your image.
+There are a few ways to get your image views focussing in on faces within images.
+
+####Interface Builder####
+This is the easiest method and doesn't require writing any code.
+The extension makes use of `@IBDesignable` and `@IBInspectable` so you can turn on focusOnFaces from within IB. However you won't actually see the extension working until you run your project.
+
+<img src="https://raw.githubusercontent.com/BeauNouvelle/AspectFillFaceAware/master/inspectable.png" width=30%>
+
+####Code####
+You can set `focusOnFaces` to `true`.
 
 ```
-someImageView.focusOnFaces()
+someImageView.focusOnFaces = true
 ```
+Be sure to set this *after* setting your image. If no image is present when this is called, there's no faces to focus on.
 
-In order to reduce the sudden awkward recentering of the photo, there's a new function that will set the image, and focus on faces. 
+------
+
+Alternatively you can use:
 
 ```
-setImageAndFocusOnFaces(image: myImage)
+someImageView.set(image: myImage, focusOnFaces: true)
 ```
+Which elimates the worry of not having an image previously set.
 
 ##Future Plans##
 * Add an option to only focus on largest/closest face in photo.
-* <s> Support Swift 2.3</s>   DONE
+* <s> Support Swift 2.3</s>
+* <s> Remove 'pop in' when a focus has been completed.</s>
 
 ##License##
 

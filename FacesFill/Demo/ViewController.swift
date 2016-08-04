@@ -13,10 +13,5 @@ class ViewController: UIViewController {
     @IBOutlet weak var normal: UIImageView!
     @IBOutlet weak var faceAware: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        faceAware.focusOnFaces()
-    }
-    
 }
 
