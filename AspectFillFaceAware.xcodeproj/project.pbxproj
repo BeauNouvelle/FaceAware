@@ -38,7 +38,6 @@
 		7D8A03671D42259A004F98A0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D8A03681D42259A004F98A0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7D9E08721D4B975C00C121EF /* UIImageView+FaceAware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FaceAware.swift"; sourceTree = "<group>"; };
-		7D9E08741D4B977500C121EF /* UIImageView+FaceAware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FaceAware.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,19 +111,10 @@
 		7D8A03691D42259A004F98A0 /* AspectFillFaceAware */ = {
 			isa = PBXGroup;
 			children = (
-				7D9E08701D4B975C00C121EF /* Swift 2.3 */,
 				7D9E08711D4B975C00C121EF /* Swift 3 */,
 			);
 			name = AspectFillFaceAware;
 			path = FacesFill;
-			sourceTree = "<group>";
-		};
-		7D9E08701D4B975C00C121EF /* Swift 2.3 */ = {
-			isa = PBXGroup;
-			children = (
-				7D9E08741D4B977500C121EF /* UIImageView+FaceAware.swift */,
-			);
-			path = "Swift 2.3";
 			sourceTree = "<group>";
 		};
 		7D9E08711D4B975C00C121EF /* Swift 3 */ = {
