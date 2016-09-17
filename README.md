@@ -1,6 +1,6 @@
 # FaceAware
 
-<img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/largeExample.jpg" width=50%>
+<img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/avatarExample.png" width=50%>
 
 Sometimes the aspect ratios of images we need to work with don't quite fit within the confines of our UIImageViews.
 
@@ -13,7 +13,7 @@ The most common use for FaceAware is with avatars.
 
 With FaceAware your users will no longer have to crop and adjust their profile pictures.
 
-<img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/avatarExample.png" width=50%>
+<img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/largeExample.jpg" width=50%>
 
 Based on these two older projects:
 
