@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint AspectFillFaceAware.podspec' to ensure this is a
+#  Be sure to run `pod spec lint FaceAware.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "AspectFillFaceAware"
-  s.version      = "1.0.0"
+  s.name         = "FaceAware"
+  s.version      = "1.1.0"
   s.summary      = "A UIImageView extension that focus on faces within an image."
 
   # This description is used to generate tags and improve search results.
@@ -28,8 +28,8 @@ Pod::Spec.new do |s|
   An extension that gives UIImageView the ability to focus on faces within an image when using AspectFill.
                    DESC
 
-  s.homepage     = "https://github.com/BeauNouvelle/AspectFillFaceAware"
-  s.screenshots  = "https://raw.githubusercontent.com/BeauNouvelle/AspectFillFaceAware/master/largeExample.png", "https://raw.githubusercontent.com/BeauNouvelle/AspectFillFaceAware/master/avatarExample.png"
+  s.homepage     = "https://github.com/BeauNouvelle/FaceAware"
+  s.screenshots  = "https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/avatarExample.png"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/BeauNouvelle/AspectFillFaceAware.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/BeauNouvelle/FaceAware.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
