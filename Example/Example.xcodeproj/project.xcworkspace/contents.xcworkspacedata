@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/beauyoung/Desktop/FacesFill/AspectFillFaceAware.xcodeproj">
+      location = "self:Example.xcodeproj">
    </FileRef>
 </Workspace>

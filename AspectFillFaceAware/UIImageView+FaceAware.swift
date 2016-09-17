@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 @IBDesignable
-extension UIImageView {
+public extension UIImageView {
     
     @IBInspectable
     public var focusOnFaces: Bool {
