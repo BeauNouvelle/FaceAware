@@ -1,6 +1,6 @@
 # FaceAware
 
-<img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/largeExample.png" width=50%>
+<img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/largeExample.jpg" width=50%>
 
 Sometimes the aspect ratios of images we need to work with don't quite fit within the confines of our UIImageViews.
 
