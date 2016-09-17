@@ -63,8 +63,6 @@ Reach out to me on Twitter [@beaunouvelle](https://twitter.com/BeauNouvelle)
 ##Future Plans##
 - [ ] Add an option to only focus on largest/closest face in photo.
 - [ ] Debug mode. Draw rectangles around detected faces.
-- [x] Support Swift 2.3</s>
-- [x] Remove 'pop in' when a focus has been completed.</s>
 
 ##License##
 
