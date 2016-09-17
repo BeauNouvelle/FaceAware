@@ -1,6 +1,6 @@
 # FaceAware
 
-<img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/avatarExample.png" width=50%>
+<img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/Images/avatarExample.png" width=50%>
 
 Sometimes the aspect ratios of images we need to work with don't quite fit within the confines of our UIImageViews.
 
@@ -13,7 +13,7 @@ The most common use for FaceAware is with avatars.
 
 With FaceAware your users will no longer have to crop and adjust their profile pictures.
 
-<img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/largeExample.jpg" width=50%>
+<img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/Images/largeExample.jpg" width=50%>
 
 Based on these two older projects:
 
@@ -43,7 +43,7 @@ There are a few ways to get your image views focussing in on faces within images
 This is the easiest method and doesn't require writing any code.
 The extension makes use of `@IBDesignable` and `@IBInspectable` so you can turn on focusOnFaces from within IB. However you won't actually see the extension working until you run your project.
 
-<img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/inspectable.png" width=30%>
+<img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/Images/inspectable.png" width=40%>
 
 ####Code####
 You can set `focusOnFaces` to `true`.
