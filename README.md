@@ -1,5 +1,7 @@
 # FaceAware
 
+<img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/largeExample.png" width=50%>
+
 Sometimes the aspect ratios of images we need to work with don't quite fit within the confines of our UIImageViews.
 
 In most cases we can use AspectFill to fit the image to the bounds of a UIImageView without stretching or leaving whitespace, however when it comes to photos of people, it's quite often to have the faces cropped out if they're not perfectly centered.
@@ -11,7 +13,7 @@ The most common use for FaceAware is with avatars.
 
 With FaceAware your users will no longer have to crop and adjust their profile pictures.
 
-<img src="https://raw.githubusercontent.com/BeauNouvelle/AspectFillFaceAware/master/avatarExample.png" width=30%>
+<img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/avatarExample.png" width=50%>
 
 Based on these two older projects:
 
