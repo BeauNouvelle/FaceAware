@@ -1,15 +1,15 @@
-# Aspect Fill - Face Aware
+# FaceAware
 
 Sometimes the aspect ratios of images we need to work with don't quite fit within the confines of our UIImageViews.
 
 In most cases we can use AspectFill to fit the image to the bounds of a UIImageView without stretching or leaving whitespace, however when it comes to photos of people, it's quite often to have the faces cropped out if they're not perfectly centered.
 
-This is where AspectFillFaceAware comes in.
-It will analyse an image either through `UIImageView`'s `image` property, or one you set using one of the built in fucntions and focus in on any faces it can find within.
+This is where FaceAware comes in.
+It will analyse an image either through `UIImageView`'s `image` property, or one you set using one of the built in functions and focus in on any faces it can find within.
 
-<img src="https://raw.githubusercontent.com/BeauNouvelle/AspectFillFaceAware/master/largeExample.png" width=30%>
+The most common use for FaceAware is with avatars. 
 
-Also works great with avatars!
+With FaceAware your users will no longer have to crop and adjust their profile pictures.
 
 <img src="https://raw.githubusercontent.com/BeauNouvelle/AspectFillFaceAware/master/avatarExample.png" width=30%>
 
@@ -23,13 +23,16 @@ Both of which don't seem to be maintained anymore.
 ##Requirements##
 * Swift 3.0
 * iOS 8.0+
-* Xcode 8 beta 4
-There is also a Swift 2.3 version bundled in, but the project won't run in Xcode 7.
+* Xcode 8
 
 ##Installation##
+###Manual###
 Simply drag `UIImageView+FaceAware.swift` into your project. 
 
 There's one for Swift 3.0 and 2.3 however the example project will only run in Xcode 8.
+
+###Cocoapods###
+Just add `pod 'FaceAware'` to your pod file.
 
 ##Useage##
 There are a few ways to get your image views focussing in on faces within images.
