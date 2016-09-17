@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Foundation
+import ObjectiveC
 
 @IBDesignable
 public extension UIImageView {
