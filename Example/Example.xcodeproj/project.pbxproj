@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D0D35641D8D72CF00632729 /* UIImageView+FaceAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D35631D8D72CF00632729 /* UIImageView+FaceAware.swift */; };
 		7DCFCEEC1D8D5B9D00FE3229 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFCEEB1D8D5B9D00FE3229 /* AppDelegate.swift */; };
 		7DCFCEEE1D8D5B9D00FE3229 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFCEED1D8D5B9D00FE3229 /* ViewController.swift */; };
 		7DCFCEF11D8D5B9D00FE3229 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCFCEEF1D8D5B9D00FE3229 /* Main.storyboard */; };
 		7DCFCEF31D8D5B9D00FE3229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DCFCEF21D8D5B9D00FE3229 /* Assets.xcassets */; };
 		7DCFCEF61D8D5B9D00FE3229 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCFCEF41D8D5B9D00FE3229 /* LaunchScreen.storyboard */; };
-		7DCFCEFF1D8D5BB500FE3229 /* UIImageView+FaceAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFCEFE1D8D5BB500FE3229 /* UIImageView+FaceAware.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D0D35631D8D72CF00632729 /* UIImageView+FaceAware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FaceAware.swift"; sourceTree = "<group>"; };
 		7DCFCEE81D8D5B9D00FE3229 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCFCEEB1D8D5B9D00FE3229 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DCFCEED1D8D5B9D00FE3229 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,7 +24,6 @@
 		7DCFCEF21D8D5B9D00FE3229 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DCFCEF51D8D5B9D00FE3229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DCFCEF71D8D5B9D00FE3229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DCFCEFE1D8D5BB500FE3229 /* UIImageView+FaceAware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FaceAware.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +37,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D0D35621D8D72CF00632729 /* FaceAware */ = {
+			isa = PBXGroup;
+			children = (
+				7D0D35631D8D72CF00632729 /* UIImageView+FaceAware.swift */,
+			);
+			name = FaceAware;
+			path = ../../FaceAware;
+			sourceTree = "<group>";
+		};
 		7DCFCEDF1D8D5B9D00FE3229 = {
 			isa = PBXGroup;
 			children = (
@@ -56,7 +65,7 @@
 		7DCFCEEA1D8D5B9D00FE3229 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				7DCFCEFD1D8D5BB500FE3229 /* AspectFillFaceAware */,
+				7D0D35621D8D72CF00632729 /* FaceAware */,
 				7DCFCEEB1D8D5B9D00FE3229 /* AppDelegate.swift */,
 				7DCFCEED1D8D5B9D00FE3229 /* ViewController.swift */,
 				7DCFCEEF1D8D5B9D00FE3229 /* Main.storyboard */,
@@ -65,15 +74,6 @@
 				7DCFCEF71D8D5B9D00FE3229 /* Info.plist */,
 			);
 			path = Example;
-			sourceTree = "<group>";
-		};
-		7DCFCEFD1D8D5BB500FE3229 /* AspectFillFaceAware */ = {
-			isa = PBXGroup;
-			children = (
-				7DCFCEFE1D8D5BB500FE3229 /* UIImageView+FaceAware.swift */,
-			);
-			name = AspectFillFaceAware;
-			path = ../../AspectFillFaceAware;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +151,7 @@
 			files = (
 				7DCFCEEE1D8D5B9D00FE3229 /* ViewController.swift in Sources */,
 				7DCFCEEC1D8D5B9D00FE3229 /* AppDelegate.swift in Sources */,
-				7DCFCEFF1D8D5BB500FE3229 /* UIImageView+FaceAware.swift in Sources */,
+				7D0D35641D8D72CF00632729 /* UIImageView+FaceAware.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +313,7 @@
 				7DCFCEFC1D8D5B9D00FE3229 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

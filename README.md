@@ -43,7 +43,7 @@ There are a few ways to get your image views focussing in on faces within images
 This is the easiest method and doesn't require writing any code.
 The extension makes use of `@IBDesignable` and `@IBInspectable` so you can turn on focusOnFaces from within IB. However you won't actually see the extension working until you run your project.
 
-<img src="https://raw.githubusercontent.com/BeauNouvelle/AspectFillFaceAware/master/inspectable.png" width=30%>
+<img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/inspectable.png" width=30%>
 
 ####Code####
 You can set `focusOnFaces` to `true`.
