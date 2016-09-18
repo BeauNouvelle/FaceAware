@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/BeauNouvelle/FaceAware"
-  s.screenshots  = "https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/avatarExample.png"
+  s.screenshots  = "https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/Images/avatarExample.png", "https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/Images/largeExample.jpg"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
