@@ -28,13 +28,14 @@ Both of which don't seem to be maintained anymore.
 * Xcode 8
 
 ##Installation##
-###Manual###
+####Manual####
 Simply drag `UIImageView+FaceAware.swift` into your project. 
 
 There's one for Swift 3.0 and 2.3 however the example project will only run in Xcode 8.
 
-###Cocoapods###
-Just add `pod 'FaceAware'` to your pod file.
+####Cocoapods####
+- Add `pod 'FaceAware'` to your pod file.
+- Add `import FaceAware` to the top of your files where you wish to use it.
 
 ##Useage##
 There are a few ways to get your image views focussing in on faces within images.
