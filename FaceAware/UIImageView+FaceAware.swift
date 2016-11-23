@@ -59,7 +59,7 @@ public extension UIImageView {
     }
     
     private func applyFaceDetection(for features: [AnyObject], size: CGSize, cgImage: CGImage) {
-        var rect = CGRect.zero
+        var rect = features[0].bounds!
         var rightBorder = 0.0
         var bottomBorder = 0.0
         
