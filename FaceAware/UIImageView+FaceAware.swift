@@ -12,6 +12,23 @@ import ObjectiveC
 @IBDesignable
 public extension UIImageView {
     
+    private struct AssociatedCustomProperties {
+        static var debugFaceAware: Bool = false
+    }
+    
+    public var debugFaceAware: Bool {
+        set {
+            objc_setAssociatedObject(self, &AssociatedCustomProperties.debugFaceAware, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+        get {
+            guard let debug = objc_getAssociatedObject(self, &AssociatedCustomProperties.debugFaceAware) as? Bool else {
+                return false
+            }
+            
+            return debug
+        }
+    }
+    
     @IBInspectable
     public var focusOnFaces: Bool {
         set {
@@ -25,7 +42,7 @@ public extension UIImageView {
     
     public func set(image: UIImage?, focusOnFaces: Bool) {
         guard focusOnFaces == true else {
-            self.image = image
+            self.removeImageLayer(image: image)
             return
         }
         setImageAndFocusOnFaces(image: image)
@@ -45,20 +62,15 @@ public extension UIImageView {
             if features.count > 0 {
                 print("found \(features.count) faces")
                 let imgSize = CGSize(width: Double(image.cgImage!.width), height: (Double(image.cgImage!.height)))
-                self.applyFaceDetection(for: features, size: imgSize, cgImage: image.cgImage!)
+                self.applyFaceDetection(for: features, size: imgSize, image: image)
             } else {
                 print("No faces found")
-                DispatchQueue.main.async {
-                    self.imageLayer().removeFromSuperlayer()
-                }
-            }
-            DispatchQueue.main.sync {
-                self.image = image
+                self.removeImageLayer(image: image)
             }
         }
     }
     
-    private func applyFaceDetection(for features: [AnyObject], size: CGSize, cgImage: CGImage) {
+    private func applyFaceDetection(for features: [AnyObject], size: CGSize, image: UIImage) {
         var rect = features[0].bounds!
         rect.origin.y = size.height - rect.origin.y - rect.size.height
         var rightBorder = Double(rect.origin.x + rect.size.width)
@@ -110,10 +122,37 @@ public extension UIImageView {
             offset.y = -offset.y
         }
         
+        var newImage: UIImage
+        if self.debugFaceAware {
+            // Draw rectangles around detected faces
+            let rawImage = UIImage(cgImage: image.cgImage!)
+            UIGraphicsBeginImageContext(size)
+            rawImage.draw(at: CGPoint.zero)
+            
+            let context = UIGraphicsGetCurrentContext()
+            context!.setStrokeColor(UIColor.red.cgColor)
+            context!.setLineWidth(3)
+            
+            for feature in features[0..<features.count] {
+                var faceViewBounds = feature.bounds!
+                faceViewBounds.origin.y = size.height - faceViewBounds.origin.y - faceViewBounds.size.height
+                
+                context!.addRect(faceViewBounds)
+                context!.drawPath(using: .stroke)
+            }
+            
+            newImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+        } else {
+            newImage = image
+        }
+
         DispatchQueue.main.sync {
+            self.image = newImage
+            
             let layer = self.imageLayer()
+            layer.contents = newImage.cgImage
             layer.frame = CGRect(x: offset.x, y: offset.y, width: finalSize.width, height: finalSize.height)
-            layer.contents = cgImage
         }
     }
     
@@ -127,6 +166,14 @@ public extension UIImageView {
         subLayer.actions = ["contents":NSNull(), "bounds":NSNull(), "position":NSNull()]
         layer.addSublayer(subLayer)
         return subLayer
+    }
+    
+    private func removeImageLayer(image: UIImage?) {
+        DispatchQueue.main.async {
+            // avoid redundant layer when focus on faces for the image of cell specified in UITableView
+            self.imageLayer().removeFromSuperlayer()
+            self.image = image
+        }
     }
     
     private func sublayer() -> CALayer? {
