@@ -16,11 +16,11 @@ public extension UIImageView {
         static var debugFaceAware: Bool = false
     }
     
+    @IBInspectable
     public var debugFaceAware: Bool {
         set {
             objc_setAssociatedObject(self, &AssociatedCustomProperties.debugFaceAware, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-        get {
+        } get {
             guard let debug = objc_getAssociatedObject(self, &AssociatedCustomProperties.debugFaceAware) as? Bool else {
                 return false
             }
