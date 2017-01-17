@@ -63,12 +63,23 @@ someImageView.set(image: myImage, focusOnFaces: true)
 ```
 Which elimates the worry of not having an image previously set.
 
+------
+
+####Debugging####
+FaceAware now features a debug mode which draws red squares around any detected faces within an image. To enable you can set the `debug` property to true.
+
+```
+someImageView.debug = true
+```
+
+You can also set this flag within interface builder.
+
+
 ##More help? Questions?##
 Reach out to me on Twitter [@beaunouvelle](https://twitter.com/BeauNouvelle)
 
 ##Future Plans##
 - [ ] Add an option to only focus on largest/closest face in photo.
-- [ ] Debug mode. Draw rectangles around detected faces.
 
 ##License##
 
