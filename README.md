@@ -22,34 +22,34 @@ Based on these two older projects:
 
 Both of which don't seem to be maintained anymore.
 
-##Requirements##
+## Requirements ##
 * Swift 3.0
 * iOS 8.0+
 * Xcode 8
 
-##Installation##
-####Manual####
+## Installation ##
+#### Manual ####
 Simply drag `UIImageView+FaceAware.swift` into your project. 
 
 There's one for Swift 3.0 and 2.3 however the example project will only run in Xcode 8.
 
-####Cocoapods####
+#### Cocoapods ####
 - Add `pod 'FaceAware'` to your pod file.
 - Add `import FaceAware` to the top of your files where you wish to use it.
 
-##Useage##
+## Useage ##
 There are a few ways to get your image views focussing in on faces within images.
 
-####Interface Builder####
+#### Interface Builder ####
 This is the easiest method and doesn't require writing any code.
 The extension makes use of `@IBDesignable` and `@IBInspectable` so you can turn on focusOnFaces from within IB. However you won't actually see the extension working until you run your project.
 
 <img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/Images/inspectable.png" width=40%>
 
-####Code####
+#### Code ####
 You can set `focusOnFaces` to `true`.
 
-```
+```swift
 someImageView.focusOnFaces = true
 ```
 Be sure to set this *after* setting your image. If no image is present when this is called, there will be no faces to focus on.
@@ -58,30 +58,30 @@ Be sure to set this *after* setting your image. If no image is present when this
 
 Alternatively you can use:
 
-```
+```swift
 someImageView.set(image: myImage, focusOnFaces: true)
 ```
 Which elimates the worry of not having an image previously set.
 
 ------
 
-####Debugging####
+#### Debugging ####
 FaceAware now features a debug mode which draws red squares around any detected faces within an image. To enable you can set the `debug` property to true.
 
-```
+```swift
 someImageView.debug = true
 ```
 
 You can also set this flag within interface builder.
 
 
-##More help? Questions?##
+## More help? Questions? ##
 Reach out to me on Twitter [@beaunouvelle](https://twitter.com/BeauNouvelle)
 
-##Future Plans##
+## Future Plans ##
 - [ ] Add an option to only focus on largest/closest face in photo.
 
-##License##
+## License ##
 
 The MIT License (MIT)
 
