@@ -77,6 +77,7 @@ You can also set this flag within interface builder.
 
 ## More help? Questions? ##
 Reach out to me on Twitter [@beaunouvelle](https://twitter.com/BeauNouvelle)
+Also, if you're using this in your project and you like it, please let me know so I can continue working on it!
 
 ## Future Plans ##
 - [ ] Add an option to only focus on largest/closest face in photo.
