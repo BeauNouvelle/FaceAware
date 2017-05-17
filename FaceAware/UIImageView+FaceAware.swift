@@ -9,6 +9,14 @@
 import UIKit
 import ObjectiveC
 
+
+public struct FaceDetected {
+    let bounds: CGRect
+    public init(_ bounds: CGRect) {
+        self.bounds = bounds
+    }
+}
+
 @IBDesignable
 public extension UIImageView {
     
@@ -29,55 +37,64 @@ public extension UIImageView {
         }
     }
     
-    @IBInspectable
-    public var focusOnFaces: Bool {
-        set {
-            let image = self.image
-            self.image = nil
-            set(image: image, focusOnFaces: newValue)
-        } get {
-            return sublayer() != nil ? true : false
-        }
-    }
+//    @IBInspectable
+//    public var focusOnFaces: Bool {
+//        set {
+//            let image = self.image
+//            self.image = nil
+//            set(image: image, focusOnFaces: newValue, faceData: nil,complition: nil)
+//        } get {
+//            return sublayer() != nil ? true : false
+//        }
+//    }
     
-    public func set(image: UIImage?, focusOnFaces: Bool) {
+    public func set(image: UIImage?, focusOnFaces: Bool, faceData: [FaceDetected]?, complition: @escaping ([FaceDetected]?) -> Void) {
         guard focusOnFaces == true else {
             self.removeImageLayer(image: image)
             return
         }
-        setImageAndFocusOnFaces(image: image)
+         setImageAndFocusOnFaces(image: image,faceData: faceData,complition: complition)
     }
     
-    private func setImageAndFocusOnFaces(image: UIImage?) {
+    private func setImageAndFocusOnFaces(image: UIImage?, faceData: [FaceDetected]?,  complition: @escaping ([FaceDetected]?) -> Void)  {
         DispatchQueue.global(qos: .default).async {
             guard let image = image else {
+                complition(nil)
+                return
+            }
+            var detectedFaces = faceData
+            if faceData == nil {
+                let cImage = image.ciImage ?? CIImage(cgImage: image.cgImage!)
+                let detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyLow])
+                let features = detector!.features(in: cImage)
+                detectedFaces = features.map{ return FaceDetected($0.bounds)}
+            }
+            
+            guard let facesResult  = detectedFaces else {
+                complition(nil)
                 return
             }
             
-            let cImage = image.ciImage ?? CIImage(cgImage: image.cgImage!)
-            
-            let detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyLow])
-            let features = detector!.features(in: cImage)
-            
-            if features.count > 0 {
-                print("found \(features.count) faces")
+            if facesResult.count > 0 {
+                print("found \(facesResult.count) faces")
                 let imgSize = CGSize(width: Double(image.cgImage!.width), height: (Double(image.cgImage!.height)))
-                self.applyFaceDetection(for: features, size: imgSize, image: image)
+                self.applyFaceDetection(for: facesResult, size: imgSize, image: image)
             } else {
                 print("No faces found")
                 self.removeImageLayer(image: image)
             }
+            complition(facesResult)
         }
     }
     
-    private func applyFaceDetection(for features: [AnyObject], size: CGSize, image: UIImage) {
-        var rect = features[0].bounds!
+    private func applyFaceDetection(for features: [FaceDetected], size: CGSize, image: UIImage) {
+        var rect = features[0].bounds
         rect.origin.y = size.height - rect.origin.y - rect.size.height
         var rightBorder = Double(rect.origin.x + rect.size.width)
         var bottomBorder = Double(rect.origin.y + rect.size.height)
         
         for feature in features[1..<features.count] {
-            var oneRect = feature.bounds!
+            var oneRect = feature.bounds
             oneRect.origin.y = size.height - oneRect.origin.y - oneRect.size.height
             rect.origin.x = min(oneRect.origin.x, rect.origin.x)
             rect.origin.y = min(oneRect.origin.y, rect.origin.y)
@@ -134,7 +151,7 @@ public extension UIImageView {
             context!.setLineWidth(3)
             
             for feature in features[0..<features.count] {
-                var faceViewBounds = feature.bounds!
+                var faceViewBounds = feature.bounds
                 faceViewBounds.origin.y = size.height - faceViewBounds.origin.y - faceViewBounds.size.height
                 
                 context!.addRect(faceViewBounds)
