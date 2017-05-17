@@ -12,7 +12,7 @@ import ObjectiveC
 
 public struct FaceDetected {
     let bounds: CGRect
-    init(_ bounds: CGRect) {
+    public init(_ bounds: CGRect) {
         self.bounds = bounds
     }
 }
