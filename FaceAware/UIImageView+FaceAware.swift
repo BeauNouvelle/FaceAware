@@ -65,7 +65,7 @@ public extension UIImageView {
             var detectedFaces = faceData
             if faceData == nil {
                 let cImage = image.ciImage ?? CIImage(cgImage: image.cgImage!)
-                let detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyLow])
+                let detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])
                 let features = detector!.features(in: cImage)
                 detectedFaces = features.map{ return FaceDetected($0.bounds)}
             }
