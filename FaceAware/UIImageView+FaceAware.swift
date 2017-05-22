@@ -167,9 +167,9 @@ public extension UIImageView {
         DispatchQueue.main.sync {
             self.image = newImage
             
-            let layer = self.imageLayer()
-            layer.contents = newImage.cgImage
-            layer.frame = CGRect(x: offset.x, y: offset.y, width: finalSize.width, height: finalSize.height)
+//            let layer = self.imageLayer()
+//            layer.contents = newImage.cgImage
+//            layer.frame = CGRect(x: offset.x, y: offset.y, width: finalSize.width, height: finalSize.height)
         }
     }
     
