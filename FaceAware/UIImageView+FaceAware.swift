@@ -1,9 +1,6 @@
 //
-//  UIImageView+FacesFill.swift
-//  FacesFill
-//
-//  Created by Beau Nouvelle on 22/7/16.
-//  Copyright © 2016 Pear Pi. All rights reserved.
+//  UIImageView+FaceAware.swift
+//  FaceAware
 //
 
 import UIKit
