@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FaceAware"
-  s.version      = "1.2.0"
+  s.version      = "1.3.0"
   s.summary      = "A UIImageView extension that focus on faces within an image."
 
   # This description is used to generate tags and improve search results.
