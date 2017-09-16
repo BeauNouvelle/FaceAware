@@ -57,11 +57,15 @@ public extension UIImageView {
             let features = detector!.features(in: cImage)
             
             if features.count > 0 {
-                print("found \(features.count) faces")
+                if self.debugFaceAware == true {
+                    print("found \(features.count) faces")
+                }
                 let imgSize = CGSize(width: Double(image.cgImage!.width), height: (Double(image.cgImage!.height)))
                 self.applyFaceDetection(for: features, size: imgSize, image: image)
             } else {
-                print("No faces found")
+                if self.debugFaceAware == true {
+                    print("No faces found")
+                }
                 self.removeImageLayer(image: image)
             }
         }
@@ -89,34 +93,36 @@ public extension UIImageView {
         var center = CGPoint(x: rect.origin.x + rect.size.width / 2.0, y: rect.origin.y + rect.size.height / 2.0)
         var offset = CGPoint.zero
         var finalSize = size
-        
-        if size.width / size.height > bounds.size.width / bounds.size.height {
-            finalSize.height = self.bounds.size.height
-            finalSize.width = size.width/size.height * finalSize.height
-            center.x = finalSize.width / size.width * center.x
-            center.y = finalSize.width / size.width * center.y
-            
-            offset.x = center.x - self.bounds.size.width * 0.5
-            if (offset.x < 0) {
-                offset.x = 0
-            } else if (offset.x + self.bounds.size.width > finalSize.width) {
-                offset.x = finalSize.width - self.bounds.size.width
-            }
-            offset.x = -offset.x
-        } else {
-            finalSize.width = self.bounds.size.width
-            finalSize.height = size.height / size.width * finalSize.width
-            center.x = finalSize.width / size.width * center.x
-            center.y = finalSize.width / size.width * center.y
-            
-            offset.y = center.y - self.bounds.size.height * CGFloat(1-0.618)
-            if offset.y < 0 {
-                offset.y = 0
-            } else if offset.y + self.bounds.size.height > finalSize.height {
+
+        DispatchQueue.main.async {
+            if size.width / size.height > self.bounds.size.width / self.bounds.size.height {
                 finalSize.height = self.bounds.size.height
-                offset.y = finalSize.height
+                finalSize.width = size.width/size.height * finalSize.height
+                center.x = finalSize.width / size.width * center.x
+                center.y = finalSize.width / size.width * center.y
+
+                offset.x = center.x - self.bounds.size.width * 0.5
+                if (offset.x < 0) {
+                    offset.x = 0
+                } else if (offset.x + self.bounds.size.width > finalSize.width) {
+                    offset.x = finalSize.width - self.bounds.size.width
+                }
+                offset.x = -offset.x
+            } else {
+                finalSize.width = self.bounds.size.width
+                finalSize.height = size.height / size.width * finalSize.width
+                center.x = finalSize.width / size.width * center.x
+                center.y = finalSize.width / size.width * center.y
+
+                offset.y = center.y - self.bounds.size.height * CGFloat(1-0.618)
+                if offset.y < 0 {
+                    offset.y = 0
+                } else if offset.y + self.bounds.size.height > finalSize.height {
+                    finalSize.height = self.bounds.size.height
+                    offset.y = finalSize.height
+                }
+                offset.y = -offset.y
             }
-            offset.y = -offset.y
         }
         
         var newImage: UIImage
