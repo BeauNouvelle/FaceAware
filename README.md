@@ -23,9 +23,9 @@ Based on these two older projects:
 Both of which don't seem to be maintained anymore.
 
 ## Requirements ##
-* Swift 3.0
+* Swift 4.0
 * iOS 8.0+
-* Xcode 8
+* Xcode 9
 
 ## Installation ##
 #### Manual ####
