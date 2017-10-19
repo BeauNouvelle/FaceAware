@@ -9,6 +9,13 @@ import ObjectiveC
 @IBDesignable
 public extension UIImageView {
     
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        if focusOnFaces {
+            setImageAndFocusOnFaces(image: self.image)
+        }
+    }
+
     private struct AssociatedCustomProperties {
         static var debugFaceAware: Bool = false
     }
