@@ -12,6 +12,7 @@
 		7DCFCEF11D8D5B9D00FE3229 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCFCEEF1D8D5B9D00FE3229 /* Main.storyboard */; };
 		7DCFCEF31D8D5B9D00FE3229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DCFCEF21D8D5B9D00FE3229 /* Assets.xcassets */; };
 		7DCFCEF61D8D5B9D00FE3229 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCFCEF41D8D5B9D00FE3229 /* LaunchScreen.storyboard */; };
+		8B7879CD20BE57B700490FAA /* UIImageView+FaceAware.swift in Headers */ = {isa = PBXBuildFile; fileRef = 7D0D35631D8D72CF00632729 /* UIImageView+FaceAware.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B9DECFB20BE4E82000CB1F0 /* FaceAware.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B9DECF920BE4E82000CB1F0 /* FaceAware.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B9DECFE20BE4E82000CB1F0 /* FaceAware.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9DECF720BE4E82000CB1F0 /* FaceAware.framework */; };
 		8B9DED0020BE4E82000CB1F0 /* FaceAware.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9DECF720BE4E82000CB1F0 /* FaceAware.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -133,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B9DECFB20BE4E82000CB1F0 /* FaceAware.h in Headers */,
+				8B7879CD20BE57B700490FAA /* UIImageView+FaceAware.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
