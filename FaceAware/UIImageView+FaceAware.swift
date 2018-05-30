@@ -7,7 +7,7 @@ import UIKit
 import ObjectiveC
 
 @IBDesignable
-extension UIImageView {
+public extension UIImageView {
 
     override open func layoutSubviews() {
         super.layoutSubviews()
