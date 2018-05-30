@@ -1,4 +1,5 @@
-# FaceAware
+# FaceAware [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 
 <img src="https://raw.githubusercontent.com/BeauNouvelle/FaceAware/master/Images/avatarExample.png" width=50%>
 
