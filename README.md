@@ -31,8 +31,6 @@ Both of which don't seem to be maintained anymore.
 #### Manual ####
 Simply drag `UIImageView+FaceAware.swift` into your project. 
 
-There's one for Swift 3.0 and 2.3 however the example project will only run in Xcode 9.
-
 #### Carthage ####
 - Add `github "BeauNouvelle/FaceAware"` to your `Cartfile`
 
