@@ -74,6 +74,16 @@ extension UIImageView {
                     print("No faces found")
                 }
                 self.removeImageLayer(image: image)
+                
+                // Notification pass faceImage value
+                DispatchQueue.main.async {
+                    let notificationName = Notification.Name(rawValue: "ImageFaceAwareNotification")
+                    
+                    let newImage = NSNull();
+                    NotificationCenter.default.post(name: notificationName,
+                                                    object: self,
+                                                    userInfo: ["faceImage": newImage, "layerFrame": self.frame])
+                }
             }
         }
     }
@@ -163,6 +173,13 @@ extension UIImageView {
             let layer = self.imageLayer()
             layer.contents = newImage.cgImage
             layer.frame = CGRect(x: offset.x, y: offset.y, width: finalSize.width, height: finalSize.height)
+            
+            
+            // Notification pass faceImage value
+            let notificationName = Notification.Name(rawValue: "ImageFaceAwareNotification")
+            NotificationCenter.default.post(name: notificationName,
+                                            object: self,
+                                            userInfo: ["faceImage": newImage, "layerFrame": layer.frame])
         }
     }
 
