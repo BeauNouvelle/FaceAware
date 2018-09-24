@@ -69,6 +69,14 @@ Which elimates the worry of not having an image previously set.
 
 ------
 
+You can also recieve a callback for when face detection and any image adjustments have been completed by passing in a closure to the `didFocusOnFaces` property.
+
+```swift
+someImageView.didFocusOnFaces = {
+     print("Did finish focussing")
+}
+```
+
 #### Debugging ####
 FaceAware now features a debug mode which draws red squares around any detected faces within an image. To enable you can set the `debug` property to true.
 
