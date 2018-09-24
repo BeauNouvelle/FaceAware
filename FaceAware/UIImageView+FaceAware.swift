@@ -2,38 +2,52 @@
 //  UIImageView+FaceAware.swift
 //  FaceAware
 //
+//  The MIT License (MIT)
+//
+//  Copyright (c) 2018 Beau Nouvelle
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
 
 import UIKit
 import ObjectiveC
 
+private var closureKey: UInt = 0
+private var debugKey: UInt = 1
+
 @IBDesignable
-extension UIImageView {
-
-    override open func layoutSubviews() {
-        super.layoutSubviews()
-        if focusOnFaces {
-            setImageAndFocusOnFaces(image: self.image)
-        }
-    }
-
-    private struct AssociatedCustomProperties {
-        static var debugFaceAware: Bool = false
-    }
+extension UIImageView: Attachable {
 
     @IBInspectable
+    /// Adds a red bordered rectangle around any faces detected.
     public var debugFaceAware: Bool {
         set {
-            objc_setAssociatedObject(self, &AssociatedCustomProperties.debugFaceAware, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            set(newValue, forKey: &debugKey)
         } get {
-            guard let debug = objc_getAssociatedObject(self, &AssociatedCustomProperties.debugFaceAware) as? Bool else {
+            guard let debug = getAttach(forKey: &debugKey) as? Bool else {
                 return false
             }
-
             return debug
         }
     }
 
     @IBInspectable
+    /// Set this to true if you want to center the image on any detected faces.
     public var focusOnFaces: Bool {
         set {
             let image = self.image
@@ -50,6 +64,16 @@ extension UIImageView {
             return
         }
         setImageAndFocusOnFaces(image: image)
+    }
+
+    /// You can provide a closure here to receive a callback for when all face
+    /// detection and image adjustments have been finished.
+    public var didFocusOnFaces: (() -> Void)? {
+        set {
+            set(newValue, forKey: &closureKey)
+        } get {
+            return getAttach(forKey: &closureKey) as? (() -> Void)
+        }
     }
 
     private func setImageAndFocusOnFaces(image: UIImage?) {
@@ -163,6 +187,7 @@ extension UIImageView {
             let layer = self.imageLayer()
             layer.contents = newImage.cgImage
             layer.frame = CGRect(x: offset.x, y: offset.y, width: finalSize.width, height: finalSize.height)
+            self.didFocusOnFaces?()
         }
     }
 
@@ -193,6 +218,13 @@ extension UIImageView {
             }
         }
         return nil
+    }
+
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+        if focusOnFaces {
+            setImageAndFocusOnFaces(image: self.image)
+        }
     }
 
 }
