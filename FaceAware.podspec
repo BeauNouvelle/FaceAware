@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   s.name         = "FaceAware"
   s.version      = "1.5.0"
   s.summary      = "A UIImageView extension that focus on faces within an image."
+  s.swift_version = '4.1'
 
   s.description  = <<-DESC
   An extension that gives UIImageView the ability to focus on faces within an image when using AspectFill.
@@ -24,6 +25,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://twitter.com/BeauNouvelle"
 
   s.platform     = :ios, "8.0"
+
   s.source       = { :git => "https://github.com/BeauNouvelle/FaceAware.git", :tag => "#{s.version}" }
 
   s.source_files  = "FaceAware/*.{swift}"
