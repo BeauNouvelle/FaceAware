@@ -3,7 +3,6 @@
 //  Example
 //
 //  Created by Beau Nouvelle on 17/9/16.
-//  Copyright © 2016 Pear Pi. All rights reserved.
 //
 
 import UIKit
