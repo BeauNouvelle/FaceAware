@@ -9,9 +9,9 @@
 Pod::Spec.new do |s|
 
   s.name         = "FaceAware"
-  s.version      = "1.5.0"
+  s.version      = "1.6.0"
   s.summary      = "A UIImageView extension that focus on faces within an image."
-  s.swift_version = '4.1'
+  s.swift_version = '4.2'
 
   s.description  = <<-DESC
   An extension that gives UIImageView the ability to focus on faces within an image when using AspectFill.
