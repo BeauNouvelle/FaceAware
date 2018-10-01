@@ -12,6 +12,7 @@
 		7DCFCEF11D8D5B9D00FE3229 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCFCEEF1D8D5B9D00FE3229 /* Main.storyboard */; };
 		7DCFCEF31D8D5B9D00FE3229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DCFCEF21D8D5B9D00FE3229 /* Assets.xcassets */; };
 		7DCFCEF61D8D5B9D00FE3229 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCFCEF41D8D5B9D00FE3229 /* LaunchScreen.storyboard */; };
+		8B477CF8215850E4000DEBD7 /* Attachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B477CF621585087000DEBD7 /* Attachable.swift */; };
 		8B7879CD20BE57B700490FAA /* UIImageView+FaceAware.swift in Headers */ = {isa = PBXBuildFile; fileRef = 7D0D35631D8D72CF00632729 /* UIImageView+FaceAware.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B9DECFB20BE4E82000CB1F0 /* FaceAware.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B9DECF920BE4E82000CB1F0 /* FaceAware.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B9DECFE20BE4E82000CB1F0 /* FaceAware.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9DECF720BE4E82000CB1F0 /* FaceAware.framework */; };
@@ -52,6 +53,7 @@
 		7DCFCEF21D8D5B9D00FE3229 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DCFCEF51D8D5B9D00FE3229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DCFCEF71D8D5B9D00FE3229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B477CF621585087000DEBD7 /* Attachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachable.swift; sourceTree = "<group>"; };
 		8B9DECF720BE4E82000CB1F0 /* FaceAware.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FaceAware.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9DECF920BE4E82000CB1F0 /* FaceAware.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceAware.h; sourceTree = "<group>"; };
 		8B9DECFA20BE4E82000CB1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				7D0D35631D8D72CF00632729 /* UIImageView+FaceAware.swift */,
+				8B477CF621585087000DEBD7 /* Attachable.swift */,
 			);
 			name = FaceAware;
 			path = ../../FaceAware;
@@ -190,13 +193,11 @@
 				TargetAttributes = {
 					7DCFCEE71D8D5B9D00FE3229 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = RCFBK97QU7;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					8B9DECF620BE4E82000CB1F0 = {
 						CreatedOnToolsVersion = 9.4;
-						DevelopmentTeam = RCFBK97QU7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -254,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B477CF8215850E4000DEBD7 /* Attachable.swift in Sources */,
 				8B9DED0420BE4E8D000CB1F0 /* UIImageView+FaceAware.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,10 +407,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = RCFBK97QU7;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pearpi.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = "beaunouvelle.faceaware-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -421,10 +423,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = RCFBK97QU7;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pearpi.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = "beaunouvelle.faceaware-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -442,16 +444,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = RCFBK97QU7;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = FaceAware/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = beaunouvelle.FaceAware;
+				PRODUCT_BUNDLE_IDENTIFIER = beaunouvelle.faceaware;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -472,16 +474,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = RCFBK97QU7;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = FaceAware/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = beaunouvelle.FaceAware;
+				PRODUCT_BUNDLE_IDENTIFIER = beaunouvelle.faceaware;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;

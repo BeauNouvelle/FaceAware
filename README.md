@@ -31,11 +31,11 @@ Both of which don't seem to be maintained anymore.
 #### Manual ####
 Simply drag `UIImageView+FaceAware.swift` into your project. 
 
-There's one for Swift 3.0 and 2.3 however the example project will only run in Xcode 9.
-
 #### Carthage ####
 - Add `github "BeauNouvelle/FaceAware"` to your `Cartfile`
-- Add `import FaceAware` to the top of your Swift files where you wish to use it.
+
+More information on installing and setting up Carthage can be found here:
+https://github.com/Carthage/Carthage
 
 #### Cocoapods ####
 - Add `pod 'FaceAware'` to your pod file.
@@ -68,6 +68,14 @@ someImageView.set(image: myImage, focusOnFaces: true)
 Which elimates the worry of not having an image previously set.
 
 ------
+
+You can also recieve a callback for when face detection and any image adjustments have been completed by passing in a closure to the `didFocusOnFaces` property.
+
+```swift
+someImageView.didFocusOnFaces = {
+     print("Did finish focussing")
+}
+```
 
 #### Debugging ####
 FaceAware now features a debug mode which draws red squares around any detected faces within an image. To enable you can set the `debug` property to true.
