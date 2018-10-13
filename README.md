@@ -41,7 +41,7 @@ https://github.com/Carthage/Carthage
 - Add `pod 'FaceAware'` to your pod file.
 - Add `import FaceAware` to the top of your files where you wish to use it.
 
-## Useage ##
+## Usage ##
 There are a few ways to get your image views focussing in on faces within images.
 
 #### Interface Builder ####
