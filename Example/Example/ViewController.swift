@@ -20,4 +20,7 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func toggle(_ sender: UIButton) {
+        faceAwareImageView.focusOnFaces = !faceAwareImageView.focusOnFaces
+    }
 }
