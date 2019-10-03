@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -49,10 +47,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUA-tg-ovg">
+                                <rect key="frame" x="164" y="318.5" width="47" height="30"/>
+                                <state key="normal" title="Toggle"/>
+                                <connections>
+                                    <action selector="toggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iMm-OD-Q3z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="cUA-tg-ovg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5vK-Xw-a5a"/>
                             <constraint firstItem="xg2-iW-Jzm" firstAttribute="top" secondItem="sQ4-b6-uB7" secondAttribute="bottom" constant="8" id="65G-y2-jat"/>
+                            <constraint firstItem="cUA-tg-ovg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aaa-5c-E60"/>
                             <constraint firstItem="S0F-xu-X83" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="CsV-ez-MLr"/>
                             <constraint firstItem="xg2-iW-Jzm" firstAttribute="centerX" secondItem="sQ4-b6-uB7" secondAttribute="centerX" constant="1.5" id="Qup-Bj-Mmw"/>
                             <constraint firstItem="ghh-A2-MGU" firstAttribute="centerX" secondItem="S0F-xu-X83" secondAttribute="centerX" id="T0o-OW-w0L"/>
@@ -75,6 +82,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sample" width="853" height="1280"/>
+        <image name="sample" width="426.5" height="640"/>
     </resources>
 </document>

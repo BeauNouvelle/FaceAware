@@ -23,9 +23,9 @@ Based on these two older projects:
 Both of which don't seem to be maintained anymore.
 
 ## Requirements ##
-* Swift 4.0
+* Swift 5.1
 * iOS 8.0+
-* Xcode 9
+* Xcode 11
 
 ## Installation ##
 #### Manual ####
@@ -40,6 +40,8 @@ https://github.com/Carthage/Carthage
 #### Cocoapods ####
 - Add `pod 'FaceAware'` to your pod file.
 - Add `import FaceAware` to the top of your files where you wish to use it.
+
+> Cocoapod support is not supported for newer versions (2.0+) as I'm no longer able to push the podspec to trunk.
 
 ## Usage ##
 There are a few ways to get your image views focussing in on faces within images.
