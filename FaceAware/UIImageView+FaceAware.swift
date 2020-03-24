@@ -157,12 +157,19 @@ extension UIImageView: Attachable {
                 offset.y = -offset.y
             }
         }
+        
+        let newImage: UIImage
+        if self.debugFaceAware {
+            newImage = drawDebugRectangles(from: image, size: size, features: features)
+        } else {
+            newImage = image
+        }
 
         DispatchQueue.main.sync {
-            self.image = image
+            self.image = newImage
 
             let layer = self.imageLayer()
-            layer.contents = image.cgImage
+            layer.contents = newImage.cgImage
             layer.frame = CGRect(x: offset.x, y: offset.y, width: finalSize.width, height: finalSize.height)
             self.didFocusOnFaces?()
         }
