@@ -88,14 +88,14 @@ extension UIImageView: Attachable {
             let detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyLow])
             let features = detector!.features(in: ciImage)
 
-            if features.isEmpty == false {
-                if self.debugFaceAware == true {
+            if !features.isEmpty {
+                if self.debugFaceAware {
                     print("found \(features.count) faces")
                 }
                 let imgSize = CGSize(width: image.cgImage!.width, height: image.cgImage!.height)
                 self.applyFaceDetection(for: features, size: imgSize, image: image)
             } else {
-                if self.debugFaceAware == true {
+                if self.debugFaceAware {
                     print("No faces found")
                 }
                 self.removeImageLayer(image: image)
@@ -105,71 +105,64 @@ extension UIImageView: Attachable {
 
     private func applyFaceDetection(for features: [CIFeature], size: CGSize, image: UIImage) {
         var rect = features[0].bounds
-        rect.origin.y = size.height - rect.origin.y - rect.size.height
-        var rightBorder = Double(rect.origin.x + rect.size.width)
-        var bottomBorder = Double(rect.origin.y + rect.size.height)
+        rect.origin.y = size.height - rect.minY - rect.height
+        var rightBorder = Double(rect.minX + rect.width)
+        var bottomBorder = Double(rect.minY + rect.height)
 
-        for feature in features[1..<features.count] {
+        for feature in features.dropFirst() {
             var oneRect = feature.bounds
-            oneRect.origin.y = size.height - oneRect.origin.y - oneRect.size.height
-            rect.origin.x = min(oneRect.origin.x, rect.origin.x)
-            rect.origin.y = min(oneRect.origin.y, rect.origin.y)
+            oneRect.origin.y = size.height - oneRect.minY - oneRect.height
+            rect.origin.x = min(oneRect.minX, rect.minX)
+            rect.origin.y = min(oneRect.minY, rect.minY)
 
-            rightBorder = max(Double(oneRect.origin.x + oneRect.size.width), Double(rightBorder))
-            bottomBorder = max(Double(oneRect.origin.y + oneRect.size.height), Double(bottomBorder))
+            rightBorder = max(Double(oneRect.minX + oneRect.width), Double(rightBorder))
+            bottomBorder = max(Double(oneRect.minY + oneRect.height), Double(bottomBorder))
         }
 
-        rect.size.width = CGFloat(rightBorder) - rect.origin.x
-        rect.size.height = CGFloat(bottomBorder) - rect.origin.y
+        rect.size.width = CGFloat(rightBorder) - rect.minX
+        rect.size.height = CGFloat(bottomBorder) - rect.minY
 
         var offset = CGPoint.zero
         var finalSize = size
 
         DispatchQueue.main.async {
-            if size.width / size.height > self.bounds.size.width / self.bounds.size.height {
-                var centerX = rect.origin.x + rect.size.width / 2.0
+            if size.width / size.height > self.bounds.width / self.bounds.height {
+                var centerX = rect.minX + rect.width / 2.0
 
-                finalSize.height = self.bounds.size.height
-                finalSize.width = size.width/size.height * finalSize.height
+                finalSize.height = self.bounds.height
+                finalSize.width = size.width / size.height * finalSize.height
                 centerX = finalSize.width / size.width * centerX
 
-                offset.x = centerX - self.bounds.size.width * 0.5
+                offset.x = centerX - self.bounds.width * 0.5
                 if offset.x < 0 {
                     offset.x = 0
-                } else if offset.x + self.bounds.size.width > finalSize.width {
-                    offset.x = finalSize.width - self.bounds.size.width
+                } else if offset.x + self.bounds.width > finalSize.width {
+                    offset.x = finalSize.width - self.bounds.width
                 }
                 offset.x = -offset.x
             } else {
-                var centerY = rect.origin.y + rect.size.height / 2.0
+                var centerY = rect.minY + rect.height / 2.0
 
-                finalSize.width = self.bounds.size.width
+                finalSize.width = self.bounds.width
                 finalSize.height = size.height / size.width * finalSize.width
                 centerY = finalSize.width / size.width * centerY
 
-                offset.y = centerY - self.bounds.size.height * CGFloat(1-0.618)
+                offset.y = centerY - self.bounds.height * CGFloat(1-0.618)
                 if offset.y < 0 {
                     offset.y = 0
-                } else if offset.y + self.bounds.size.height > finalSize.height {
-                    finalSize.height = self.bounds.size.height
+                } else if offset.y + self.bounds.height > finalSize.height {
+                    finalSize.height = self.bounds.height
                     offset.y = finalSize.height
                 }
                 offset.y = -offset.y
             }
         }
 
-        var newImage: UIImage
-        if self.debugFaceAware {
-            newImage = drawDebugRectangles(from: image, size: size, features: features)
-        } else {
-            newImage = image
-        }
-
         DispatchQueue.main.sync {
-            self.image = newImage
+            self.image = image
 
             let layer = self.imageLayer()
-            layer.contents = newImage.cgImage
+            layer.contents = image.cgImage
             layer.frame = CGRect(x: offset.x, y: offset.y, width: finalSize.width, height: finalSize.height)
             self.didFocusOnFaces?()
         }
@@ -179,7 +172,7 @@ extension UIImageView: Attachable {
         // Draw rectangles around detected faces
         let rawImage = UIImage(cgImage: image.cgImage!)
         UIGraphicsBeginImageContext(size)
-        rawImage.draw(at: CGPoint.zero)
+        rawImage.draw(at: .zero)
 
         let context = UIGraphicsGetCurrentContext()
         context?.setStrokeColor(UIColor.red.cgColor)
@@ -187,7 +180,7 @@ extension UIImageView: Attachable {
 
         features.forEach({
             var faceViewBounds = $0.bounds
-            faceViewBounds.origin.y = size.height - faceViewBounds.origin.y - faceViewBounds.size.height
+            faceViewBounds.origin.y = size.height - faceViewBounds.minY - faceViewBounds.height
 
             context?.addRect(faceViewBounds)
             context?.drawPath(using: .stroke)
@@ -219,12 +212,7 @@ extension UIImageView: Attachable {
     }
 
     private func sublayer() -> CALayer? {
-        if let sublayers = layer.sublayers {
-            for layer in sublayers where layer.name == "AspectFillFaceAware" {
-                return layer
-            }
-        }
-        return nil
+        return layer.sublayers?.first { $0.name == "AspectFillFaceAware" }
     }
 
     override open func layoutSubviews() {
