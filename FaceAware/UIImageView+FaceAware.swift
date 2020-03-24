@@ -170,7 +170,7 @@ extension UIImageView: Attachable {
 
             let layer = self.imageLayer()
             layer.contents = newImage.cgImage
-            layer.frame = CGRect(x: offset.x, y: offset.y, width: finalSize.width, height: finalSize.height)
+            layer.frame = CGRect(origin: offset, size: finalSize)
             self.didFocusOnFaces?()
         }
     }
